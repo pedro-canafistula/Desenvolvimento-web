@@ -1,10 +1,10 @@
 let num1 = 5;
 let num2 = 2;
 
-let soma = num1 + num2;
-let subtracao = num1 - num2;
-let multiplicacao = num1 * num2;
-let divisao = num1 / num2;
+const soma = num1 + num2;
+const subtracao = num1 - num2;
+const multiplicacao = num1 * num2;
+const divisao = num1 / num2;
 
 console.log(`Resultado da Soma entre ${num1} e ${num2} é ${soma}`);
 console.log(`Resultado da subtração entre ${num1} e ${num2} é ${subtracao}`);
