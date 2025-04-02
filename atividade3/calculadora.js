@@ -1,6 +1,28 @@
+function somar(a, b) {
+
+    return a + b;
+}
+
+function subtrair(a, b) {
+
+    return a - b;
+}
+
+function multiplicar(a, b) {
+
+    return a * b;
+}
+
+function dividir(a, b) {
+
+    return a / b;
+}
+
 module.exports = {
-    somar: (a, b) => a + b,
-    subtrair: (a, b) => a - b,
-    multiplicar: (a, b) => a * b,
-    dividir: (a, b) => a / b
-};
+
+    somar,
+    subtrair,
+    multiplicar,
+    dividir
+    
+}
