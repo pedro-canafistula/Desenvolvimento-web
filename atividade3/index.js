@@ -1,33 +1,36 @@
 const express = require('express');
-const calculadora = require('./util/calculadora');
+const calc = require('./calculadora');
 
 const app = express();
-const port = 3000;
 
-app.get('/somar/:a/:b', (req, res) => {
-    const { a, b } = req.params;
-    res.json({ resultado: calculadora.somar(Number(a), Number(b)) });
+app.get('/subtrair/:num1/:num2', (req, res) => {
+
+  res.send('Resultado =  ' + calc.subtrair(parseInt(req.params.num1), parseInt(req.params.num2)));
+
 });
 
-app.get('/subtrair/:a/:b', (req, res) => {
-    const { a, b } = req.params;
-    res.json({ resultado: calculadora.subtrair(Number(a), Number(b)) });
+app.get('/somar/:num1/:num2', (req, res) => {
+
+  res.send('Resultado =  ' + calc.somar(parseInt(req.params.num1), parseInt(req.params.num2)));
+
 });
 
-app.get('/multiplicar/:a/:b', (req, res) => {
-    const { a, b } = req.params;
-    res.json({ resultado: calculadora.multiplicar(Number(a), Number(b)) });
+app.get('/multiplicar/:num1/:num2', (req, res) => {
+
+  res.send('Resultado =  ' + calc.multiplicar(parseInt(req.params.num1), parseInt(req.params.num2)));
+
 });
 
-app.get('/dividir/:a/:b', (req, res) => {
-    const { a, b } = req.params;
-    if (Number(b) === 0) {
-        return res.status(400).json({ erro: 'Divisão por zero não permitida' });
-    }
-    res.json({ resultado: calculadora.dividir(Number(a), Number(b)) });
+app.get('/dividir/:num1/:num2', (req, res) => {
+
+  res.send('Resultado =  ' + calc.dividir(parseInt(req.params.num1), parseInt(req.params.num2)));
+
 });
 
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-});
+const PORT = 8080;
 
+app.listen(PORT, () => {
+
+  console.log(`Server running on port ${PORT}`);
+
+});
